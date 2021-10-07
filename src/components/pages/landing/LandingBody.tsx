@@ -3,15 +3,18 @@ import Body1 from "src/components/text/Body1";
 import Body2Medium from "src/components/text/Body2Medium";
 import ColorClass from "src/types/enums/ColorClass";
 import Image from "next/image";
+import LandingBuyersList from "src/components/pages/landing/LandingBuyersList";
 import ResponsiveContainer from "src/components/ResponsiveContainer";
 import TextInput from "src/components/input/TextInput";
 import cloud from "public/images/cloud.svg";
 import logo from "public/images/logo.svg";
 import styles from "@/css/pages/landing/LandingBody.module.css";
+import { useDebounce } from "use-debounce";
 import { useState } from "react";
 
 export default function LandingBody(): JSX.Element {
   const [walletAddress, setWalletAddress] = useState("");
+  const [walletAddressDebounced] = useDebounce(walletAddress, 500);
 
   return (
     <div className={BackgroundColorClass.LightBlue}>
@@ -52,6 +55,9 @@ export default function LandingBody(): JSX.Element {
               placeholder="0x1234..."
               value={walletAddress}
             />
+          </div>
+          <div className={styles.buyersListContainer}>
+            <LandingBuyersList walletAddress={walletAddressDebounced} />
           </div>
         </div>
       </ResponsiveContainer>

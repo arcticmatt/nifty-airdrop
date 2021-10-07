@@ -75,7 +75,7 @@ export default function TextInput({
             className={joinClasses(
               inputStyles.textInput,
               className,
-              FontClass.Body1
+              FontClass.Body2
             )}
             maxLength={maxLength}
             onChange={(e) => {

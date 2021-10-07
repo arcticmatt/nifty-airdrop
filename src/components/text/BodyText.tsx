@@ -19,7 +19,7 @@ export type Props = {
 export default function BodyText({
   children,
   className,
-  colorClass,
+  colorClass = ColorClass.Primary,
   display,
   fontClass,
   textAlign,

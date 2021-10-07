@@ -44,7 +44,7 @@
   border-style: none;
   color: var(--color-secondary);
   outline: none;
-  padding: 12px 16px;
+  padding: 16px 16px;
   text-align: center;
   width: 100%;
   /* See https://stackoverflow.com/questions/3062968/remove-textarea-inner-shadow-on-mobile-safari-iphone */

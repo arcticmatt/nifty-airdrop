@@ -1,0 +1,12 @@
+.checkboxButton {
+  background-color: transparent;
+  border-style: none;
+  display: flex;
+  outline: none;
+  padding: 0px;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.checkboxButton:hover {
+  cursor: pointer;
+}
