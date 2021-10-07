@@ -1,8 +1,11 @@
 .cloudContainer {
+  background-color: var(--color-lightBlue);
   width: 100%;
 }
 
 .container {
+  background-color: var(--color-white);
+  min-height: 140px;
   position: relative;
 }
 
@@ -15,23 +18,92 @@
   cursor: pointer;
 }
 
+.padding {
+  background-color: var(--color-lightBlue);
+  flex-shrink: 0;
+  height: 80px;
+  width: 100%;
+}
+
 .pigeonLeftContainer {
-  bottom: 100px;
-  left: 0px;
+  bottom: 250px;
+  left: 100px;
   position: absolute;
-  width: 354px;
+  width: 250px;
 }
 
 .pigeonRightContainer {
-  bottom: 100px;
+  bottom: 250px;
   position: absolute;
-  right: 0px;
-  width: 354px;
+  right: 100px;
+  width: 250px;
 }
 
 .text {
   left: 50%;
+  min-width: 200px;
   position: absolute;
   top: 60%;
   transform: translate(-50%, -50%);
+}
+
+@media only screen and (max-width: 2200px) {
+  .pigeonLeftContainer,
+  .pigeonRightContainer {
+    bottom: 180px;
+  }
+}
+
+@media only screen and (max-width: 1800px) {
+  .pigeonLeftContainer,
+  .pigeonRightContainer {
+    bottom: 140px;
+  }
+}
+
+@media only screen and (max-width: 1560px) {
+  .pigeonLeftContainer,
+  .pigeonRightContainer {
+    width: 220px;
+  }
+}
+
+@media only screen and (max-width: 1300px) {
+  .pigeonLeftContainer {
+    left: 50px;
+  }
+
+  .pigeonRightContainer {
+    right: 50px;
+  }
+
+  .pigeonLeftContainer,
+  .pigeonRightContainer {
+    bottom: 100px;
+    width: 150px;
+  }
+}
+
+@media only screen and (max-width: 1024px) {
+  .pigeonLeftContainer {
+    left: 16px;
+  }
+
+  .pigeonRightContainer {
+    right: 16px;
+  }
+
+  .pigeonLeftContainer,
+  .pigeonRightContainer {
+    bottom: 80px;
+    width: 120px;
+  }
+}
+
+@media only screen and (max-width: 740px) {
+  .pigeonLeftContainer,
+  .pigeonRightContainer {
+    bottom: 100px;
+    width: 100px;
+  }
 }

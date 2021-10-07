@@ -1,4 +1,3 @@
-import BackgroundColorClass from "src/types/enums/BackgroundColorClass";
 import Body2Medium from "src/components/text/Body2Medium";
 import ColorClass from "src/types/enums/ColorClass";
 import GlobalClass from "src/types/enums/GlobalClass";
@@ -25,11 +24,12 @@ function Link({
 
 export default function LandingFooter(): JSX.Element {
   return (
-    <div
-      className={joinClasses(BackgroundColorClass.LightBlue, styles.container)}
-    >
-      <div className={GlobalClass.HideText}>
-        <div className={styles.cloudContainer}>
+    <>
+      <div className={styles.padding} />
+      <div className={styles.container}>
+        <div
+          className={joinClasses(styles.cloudContainer, GlobalClass.HideText)}
+        >
           <Image src={cloudFooter} layout="responsive" />
         </div>
         <div className={styles.pigeonLeftContainer}>
@@ -54,6 +54,6 @@ export default function LandingFooter(): JSX.Element {
           </Body2Medium>
         </Body2Medium>
       </div>
-    </div>
+    </>
   );
 }
