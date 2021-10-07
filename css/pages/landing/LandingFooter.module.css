@@ -6,6 +6,15 @@
   position: relative;
 }
 
+.link {
+  color: inherit;
+  text-decoration: underline;
+}
+
+.link:hover {
+  cursor: pointer;
+}
+
 .pigeonLeftContainer {
   bottom: 100px;
   left: 0px;
@@ -18,4 +27,11 @@
   position: absolute;
   right: 0px;
   width: 354px;
+}
+
+.text {
+  left: 50%;
+  position: absolute;
+  top: 60%;
+  transform: translate(-50%, -50%);
 }
