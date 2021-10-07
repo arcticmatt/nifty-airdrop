@@ -14,7 +14,7 @@
 .assets {
   column-gap: 16px;
   display: flex;
-  justify-content: flex-end;
+  margin-left: 40px;
   margin-top: 20px;
 }
 

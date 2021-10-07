@@ -1,4 +1,8 @@
+import Body2Medium from "src/components/text/Body2Medium";
+import ColorClass from "src/types/enums/ColorClass";
+import ColorValue from "src/types/enums/ColorValue";
 import LandingBuyersListItem from "src/components/pages/landing/LandingBuyersListItem";
+import LoadingSpinner from "src/components/loading/LoadingSpinner";
 import { Maybe } from "src/types/UtilityTypes";
 import groupBy from "src/utils/groupBy";
 import styles from "@/css/pages/landing/LandingBuyersList.module.css";
@@ -11,23 +15,33 @@ type Props = {
 
 function LandingBuyersListInner({ walletAddress }: Props): JSX.Element {
   const { data, error } = useSWR(
-    `https://api.opensea.io/api/v1/events?account_address=${walletAddress}&event_type=successful&only_opensea=false&offset=0&limit=100`,
+    `https://api.opensea.io/api/v1/events?account_address=${walletAddress}&event_type=transfer&only_opensea=false&offset=0&limit=100`,
     swrFetcher
   );
-  console.log("data", data);
-  console.log("error", error);
 
   if (data == null && error == null) {
-    return <div>Loading</div>;
+    return (
+      <div className={styles.loadingSpinnerContainer}>
+        <LoadingSpinner
+          colorValue={ColorValue.Primary}
+          height={24}
+          width={24}
+        />
+      </div>
+    );
   }
 
   if (error != null) {
-    return <div>Error</div>;
+    return (
+      <Body2Medium colorClass={ColorClass.Primary} textAlign="center">
+        An unexpected error occurred.
+      </Body2Medium>
+    );
   }
 
   const dataGrouped = groupBy(
     (data as any).asset_events,
-    (item) => item.winner_account.address
+    (item) => item.to_account.address
   );
 
   return (
