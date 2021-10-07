@@ -30,6 +30,7 @@ function App({ Component, pageProps }: AppProps): JSX.Element {
           href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500&display=swap"
           rel="stylesheet"
         />
+        <title>Nifty Airdrop</title>
 
         <meta name="description" content={META_DESCRIPTION} />
 
