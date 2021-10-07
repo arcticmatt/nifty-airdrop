@@ -12,6 +12,14 @@
   padding-top: 54px;
 }
 
+.input {
+  width: 500px;
+}
+
+.inputContainer {
+  margin-top: 16px;
+}
+
 .logoAndCloud {
   position: relative;
 }

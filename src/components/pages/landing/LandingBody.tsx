@@ -4,11 +4,15 @@ import Body2Medium from "src/components/text/Body2Medium";
 import ColorClass from "src/types/enums/ColorClass";
 import Image from "next/image";
 import ResponsiveContainer from "src/components/ResponsiveContainer";
+import TextInput from "src/components/input/TextInput";
 import cloud from "public/images/cloud.svg";
 import logo from "public/images/logo.svg";
 import styles from "@/css/pages/landing/LandingBody.module.css";
+import { useState } from "react";
 
 export default function LandingBody(): JSX.Element {
+  const [walletAddress, setWalletAddress] = useState("");
+
   return (
     <div className={BackgroundColorClass.LightBlue}>
       <ResponsiveContainer>
@@ -41,6 +45,14 @@ export default function LandingBody(): JSX.Element {
           >
             Enter your wallet address:
           </Body1>
+          <div className={styles.inputContainer}>
+            <TextInput
+              className={styles.input}
+              onChange={setWalletAddress}
+              placeholder="0x1234..."
+              value={walletAddress}
+            />
+          </div>
         </div>
       </ResponsiveContainer>
     </div>

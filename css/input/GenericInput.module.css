@@ -1,0 +1,17 @@
+.description {
+  color: var(--color-gray);
+  margin-bottom: 8px;
+  margin-top: 6px;
+}
+
+.labels {
+  align-items: flex-start;
+  display: flex;
+  flex-direction: column;
+  margin-bottom: 12px;
+  row-gap: 8px;
+}
+
+.hint {
+  margin-top: 12px;
+}
