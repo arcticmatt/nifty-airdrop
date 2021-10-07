@@ -50,7 +50,6 @@ export default function LandingBody(): JSX.Element {
           </Body1>
           <div className={styles.inputContainer}>
             <TextInput
-              className={styles.input}
               onChange={setWalletAddress}
               placeholder="0x1234..."
               value={walletAddress}

@@ -18,9 +18,6 @@
   padding-top: 54px;
 }
 
-.input {
-}
-
 .inputContainer {
   margin-top: 16px;
   max-width: 100%;
@@ -42,4 +39,14 @@
 
 .walletAddressTitle {
   margin-top: 40px;
+}
+
+@media only screen and (max-width: 740px) {
+  .buyersListContainer {
+    margin-top: 24px;
+  }
+
+  .title {
+    margin-top: 24px;
+  }
 }
