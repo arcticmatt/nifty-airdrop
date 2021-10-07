@@ -1,3 +1,6 @@
+import { useEffect, useState } from "react";
+
+import AmplitudeEvent from "src/types/enums/AmplitudeEvent";
 import BackgroundColorClass from "src/types/enums/BackgroundColorClass";
 import Body1 from "src/components/text/Body1";
 import Body2Medium from "src/components/text/Body2Medium";
@@ -10,11 +13,19 @@ import cloud from "public/images/cloud.svg";
 import logo from "public/images/logo.png";
 import styles from "@/css/pages/landing/LandingBody.module.css";
 import { useDebounce } from "use-debounce";
-import { useState } from "react";
+import useLogEvent from "src/hooks/useLogEvent";
 
 export default function LandingBody(): JSX.Element {
   const [walletAddress, setWalletAddress] = useState("");
   const [walletAddressDebounced] = useDebounce(walletAddress, 500);
+  const logEvent = useLogEvent();
+  useEffect(() => {
+    if (walletAddressDebounced !== "") {
+      logEvent(AmplitudeEvent.WalletAddressEntered, {
+        walletAddress: walletAddressDebounced,
+      });
+    }
+  }, [logEvent, walletAddressDebounced]);
 
   return (
     <div className={BackgroundColorClass.LightBlue}>
