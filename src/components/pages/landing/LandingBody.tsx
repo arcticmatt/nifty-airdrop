@@ -7,7 +7,7 @@ import LandingBuyersList from "src/components/pages/landing/LandingBuyersList";
 import ResponsiveContainer from "src/components/ResponsiveContainer";
 import TextInput from "src/components/input/TextInput";
 import cloud from "public/images/cloud.svg";
-import logo from "public/images/logo.svg";
+import logo from "public/images/logo.png";
 import styles from "@/css/pages/landing/LandingBody.module.css";
 import { useDebounce } from "use-debounce";
 import { useState } from "react";
@@ -24,7 +24,7 @@ export default function LandingBody(): JSX.Element {
             <div className={styles.cloud}>
               <Image src={cloud} />
             </div>
-            <Image src={logo} />
+            <Image src={logo} height={259} width={1008} />
           </div>
           <Body1
             className={styles.title}
