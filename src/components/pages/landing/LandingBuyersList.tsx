@@ -4,6 +4,7 @@ import ColorValue from "src/types/enums/ColorValue";
 import LandingBuyersListItem from "src/components/pages/landing/LandingBuyersListItem";
 import LoadingSpinner from "src/components/loading/LoadingSpinner";
 import { Maybe } from "src/types/UtilityTypes";
+import equalsIgnoreCase from "src/utils/equalsIgnoreCase";
 import groupBy from "src/utils/groupBy";
 import styles from "@/css/pages/landing/LandingBuyersList.module.css";
 import swrFetcher from "src/constants/swrFetcher";
@@ -48,7 +49,7 @@ function LandingBuyersListInner({ walletAddress }: Props): JSX.Element {
     <div className={styles.container}>
       {Object.keys(dataGrouped).map(
         (address) =>
-          address !== walletAddress && (
+          !equalsIgnoreCase(address, walletAddress) && (
             <LandingBuyersListItem
               key={address}
               address={address}
