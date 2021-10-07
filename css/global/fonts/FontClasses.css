@@ -1,0 +1,64 @@
+.body1Font {
+  font-family: var(--font-family-body1);
+  font-size: var(--font-size-body1);
+  font-weight: var(--font-weight-body1);
+  letter-spacing: var(--letter-spacing-body1);
+  line-height: var(--line-height-body1);
+}
+
+.body1MediumFont {
+  font-family: var(--font-family-body1);
+  font-size: var(--font-size-body1);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-body1);
+  line-height: var(--line-height-body1);
+}
+
+.body1SemiBoldFont {
+  font-family: var(--font-family-body1);
+  font-size: var(--font-size-body1);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-body1);
+  line-height: var(--line-height-body1);
+}
+
+.body1BoldFont {
+  font-family: var(--font-family-body1);
+  font-size: var(--font-size-body1);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-body1);
+  line-height: var(--line-height-body1);
+}
+
+.body2Font {
+  font-family: var(--font-family-body2);
+  font-size: var(--font-size-body2);
+  font-weight: var(--font-weight-body2);
+  letter-spacing: var(--letter-spacing-body2);
+  line-height: var(--line-height-body2);
+}
+
+.body2MediumFont {
+  font-family: var(--font-family-body2);
+  font-size: var(--font-size-body2);
+  font-weight: 500;
+  letter-spacing: var(--letter-spacing-body2);
+  line-height: var(--line-height-body2);
+}
+
+.body2SemiBoldFont {
+  font-family: var(--font-family-body2);
+  font-size: var(--font-size-body2);
+  font-weight: 600;
+  letter-spacing: var(--letter-spacing-body2);
+  line-height: var(--line-height-body2);
+}
+
+.body2BoldFont {
+  font-family: var(--font-family-body2);
+  font-size: var(--font-size-body2);
+  font-weight: 700;
+  letter-spacing: var(--letter-spacing-body2);
+  line-height: var(--line-height-body2);
+}
+

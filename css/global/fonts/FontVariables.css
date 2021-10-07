@@ -1,0 +1,23 @@
+:root {
+  /* body1 */
+  --font-family-body1: "DM Sans", sans-serif;
+  --font-size-body1: 24px;
+  --font-weight-body1: 400;
+  --line-height-body1: normal;
+
+  /* body2 */
+  --font-family-body2: "DM Sans", sans-serif;
+  --font-size-body2: 16px;
+  --font-weight-body2: 400;
+  --line-height-body2: normal;
+}
+
+@media only screen and (max-width: 768px) {
+  :root {
+    /* body1 */
+    --font-size-body1: 16px;
+
+    /* body2 */
+    --font-size-body2: 10px;
+  }
+}

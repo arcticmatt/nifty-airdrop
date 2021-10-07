@@ -1,0 +1,16 @@
+.colorBackgroundOverlay {
+  color: var(--color-backgroundOverlay);
+}
+
+.colorPrimary {
+  color: var(--color-primary);
+}
+
+.colorSecondary {
+  color: var(--color-secondary);
+}
+
+.colorTertiary {
+  color: var(--color-tertiary);
+}
+
