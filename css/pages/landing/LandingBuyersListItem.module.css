@@ -18,7 +18,21 @@
 
 .row {
   align-items: center;
+  display: flex;
+  justify-content: space-between;
+  width: 100%;
+}
+
+.rowLeft {
+  align-items: center;
   column-gap: 24px;
   display: flex;
   width: 100%;
+}
+
+.rowRight {
+  align-items: center;
+  column-gap: 16px;
+  display: flex;
+  flex-shrink: 0;
 }
