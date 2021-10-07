@@ -50,3 +50,17 @@
   display: flex;
   flex-shrink: 0;
 }
+
+@media only screen and (max-width: 740px) {
+  .address {
+    column-gap: 8px;
+  }
+
+  .assets {
+    margin-left: 28px;
+  }
+
+  .rowLeft {
+    column-gap: 12px;
+  }
+}
