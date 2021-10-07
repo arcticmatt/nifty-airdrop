@@ -1,7 +1,7 @@
 // Global CSS classes
 enum GlobalClass {
-  ButtonPlain = "buttonPlain",
   HideText = "hideText",
+  PlainButton = "plainButton",
 }
 
 export default GlobalClass;

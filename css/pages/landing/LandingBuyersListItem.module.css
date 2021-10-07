@@ -1,7 +1,14 @@
+.address {
+  align-items: center;
+  column-gap: 16px;
+  display: flex;
+}
+
 .container {
   border-top: 1px solid var(--color-tertiary);
   padding-bottom: 24px;
   padding-top: 24px;
+  position: relative;
   width: 100%;
 }
 

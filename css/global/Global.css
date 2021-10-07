@@ -12,21 +12,21 @@ html {
   height: 100%;
 }
 
-.buttonPlain {
-  border-style: none;
-  outline: none;
-  padding: 0;
-  -webkit-tap-highlight-color: transparent;
-}
-
-.buttonPlain:hover {
-  cursor: pointer;
-}
-
 /* See https://stackoverflow.com/questions/1833734/display-inline-block-extra-margin/8262649#8262649 */
 .hideText {
   color: transparent;
   display: block;
   font-size: 0;
   line-height: 0;
+}
+
+.plainButton {
+  border-style: none;
+  outline: none;
+  padding: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.plainButton:hover {
+  cursor: pointer;
 }

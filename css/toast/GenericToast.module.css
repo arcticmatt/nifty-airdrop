@@ -1,0 +1,46 @@
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+  }
+
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes fadeOut {
+  from {
+    opacity: 1;
+  }
+
+  to {
+    opacity: 0;
+  }
+}
+
+.container {
+  border-radius: 8px;
+  box-shadow: var(--box-shadow-dark);
+  left: 50%;
+  opacity: 1;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  z-index: 1000;
+}
+
+.containerFadeIn {
+  animation-duration: 0.25s;
+  animation-name: fadeIn;
+}
+
+.containerFadeOut {
+  animation-duration: 0.25s;
+  animation-name: fadeOut;
+  /* Makes it stay hidden after this animation finishes */
+  animation-fill-mode: forwards;
+}
+
+.hidden {
+  display: none;
+}
