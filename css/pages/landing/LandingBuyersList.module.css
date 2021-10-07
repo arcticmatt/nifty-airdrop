@@ -1,3 +1,17 @@
+.container {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.loadMoreButton {
+  background-color: var(--color-secondary);
+  border-radius: 16px;
+  color: white;
+  margin-top: 12px;
+  padding: 16px 24px;
+}
+
 .loadingSpinnerContainer {
   display: flex;
   justify-content: center;

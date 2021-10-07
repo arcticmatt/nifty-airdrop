@@ -1,22 +1,37 @@
+import { useEffect, useState } from "react";
+
 import Body2Medium from "src/components/text/Body2Medium";
 import ColorClass from "src/types/enums/ColorClass";
 import ColorValue from "src/types/enums/ColorValue";
 import LandingBuyersListItem from "src/components/pages/landing/LandingBuyersListItem";
 import LoadingSpinner from "src/components/loading/LoadingSpinner";
 import { Maybe } from "src/types/UtilityTypes";
+import PlainButton from "src/components/buttons/PlainButton";
 import equalsIgnoreCase from "src/utils/equalsIgnoreCase";
 import groupBy from "src/utils/groupBy";
 import styles from "@/css/pages/landing/LandingBuyersList.module.css";
 import swrFetcher from "src/constants/swrFetcher";
 import useSWR from "swr";
 
+const ITEMS_PER_PAGE = 100;
+
 type Props = {
   walletAddress: string;
 };
 
-function LandingBuyersListInner({ walletAddress }: Props): JSX.Element {
+function Page({
+  index,
+  onClickLoadMore,
+  walletAddress,
+}: {
+  index: number;
+  onClickLoadMore?: () => void;
+  walletAddress: string;
+}) {
   const { data, error } = useSWR(
-    `https://api.opensea.io/api/v1/events?account_address=${walletAddress}&event_type=transfer&only_opensea=false&offset=0&limit=100`,
+    `https://api.opensea.io/api/v1/events?account_address=${walletAddress}&event_type=transfer&only_opensea=false&offset=${
+      index * ITEMS_PER_PAGE
+    }&limit=${ITEMS_PER_PAGE}`,
     swrFetcher
   );
 
@@ -46,7 +61,7 @@ function LandingBuyersListInner({ walletAddress }: Props): JSX.Element {
   );
 
   return (
-    <div className={styles.container}>
+    <>
       {Object.keys(dataGrouped).map(
         (address) =>
           !equalsIgnoreCase(address, walletAddress) && (
@@ -57,8 +72,38 @@ function LandingBuyersListInner({ walletAddress }: Props): JSX.Element {
             />
           )
       )}
-    </div>
+      {onClickLoadMore && (data as any).asset_events.length === ITEMS_PER_PAGE && (
+        <PlainButton
+          className={styles.loadMoreButton}
+          onClick={onClickLoadMore}
+          transparent={false}
+        >
+          <Body2Medium>Load More</Body2Medium>
+        </PlainButton>
+      )}
+    </>
   );
+}
+
+function LandingBuyersListInner({ walletAddress }: Props): JSX.Element {
+  const [cnt, setCnt] = useState(1);
+  useEffect(() => setCnt(1), [walletAddress]);
+
+  const pages = [];
+  for (let i = 0; i < cnt; i++) {
+    pages.push(
+      <Page
+        index={i}
+        key={i}
+        onClickLoadMore={
+          i < cnt - 1 ? undefined : () => setCnt((curr) => curr + 1)
+        }
+        walletAddress={walletAddress}
+      />
+    );
+  }
+
+  return <div className={styles.container}>{pages}</div>;
 }
 
 export default function LandingBuyersList({
