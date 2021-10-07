@@ -1,4 +1,9 @@
 import "@/css/global/Global.css";
+import "@/css/global/colors/ColorVariables.css";
+import "@/css/global/colors/ColorClasses.css";
+import "@/css/global/colors/BackgroundColorClasses.css";
+import "@/css/global/fonts/FontClasses.css";
+import "@/css/global/fonts/FontVariables.css";
 
 import { AppProps } from "next/app";
 

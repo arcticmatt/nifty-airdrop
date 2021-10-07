@@ -1,4 +1,4 @@
-import ResponsiveContainer from "src/components/ResponsiveContainer";
+import LandingBody from "src/components/pages/landing/LandingBody";
 import swrFetcher from "src/constants/swrFetcher";
 import useSWR from "swr";
 
@@ -10,5 +10,5 @@ export default function LandingPage(): JSX.Element {
 
   console.log("data", data);
 
-  return <ResponsiveContainer>Hi</ResponsiveContainer>;
+  return <LandingBody />;
 }

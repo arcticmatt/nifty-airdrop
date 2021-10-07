@@ -2,6 +2,10 @@
   background-color: var(--color-backgroundOverlay);
 }
 
+.backgroundColorLightBlue {
+  background-color: var(--color-lightBlue);
+}
+
 .backgroundColorPrimary {
   background-color: var(--color-primary);
 }

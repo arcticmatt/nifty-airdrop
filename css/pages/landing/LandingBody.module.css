@@ -1,0 +1,30 @@
+.cloud {
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+
+.containerInner {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+  padding-top: 54px;
+}
+
+.logoAndCloud {
+  position: relative;
+}
+
+.subtitle {
+  margin-top: 16px;
+}
+
+.title {
+  margin-top: 48px;
+  max-width: 592px;
+}
+
+.walletAddressTitle {
+  margin-top: 40px;
+}
