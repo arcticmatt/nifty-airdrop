@@ -5,6 +5,7 @@
 
 .container {
   background-color: var(--color-white);
+  flex-shrink: 0;
   min-height: 140px;
   position: relative;
 }
@@ -41,7 +42,7 @@
 
 .text {
   left: 50%;
-  min-width: 200px;
+  min-width: 210px;
   position: absolute;
   top: 60%;
   transform: translate(-50%, -50%);
