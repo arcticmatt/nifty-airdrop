@@ -1,4 +1,8 @@
+import BackgroundColorClass from "src/types/enums/BackgroundColorClass";
 import LandingBody from "src/components/pages/landing/LandingBody";
+import LandingFooter from "src/components/pages/landing/LandingFooter";
+import joinClasses from "src/utils/joinClasses";
+import styles from "@/css/pages/landing/LandingPage.module.css";
 import swrFetcher from "src/constants/swrFetcher";
 import useSWR from "swr";
 
@@ -10,5 +14,17 @@ export default function LandingPage(): JSX.Element {
 
   console.log("data", data);
 
-  return <LandingBody />;
+  return (
+    <div className={styles.container}>
+      <div
+        className={joinClasses(
+          styles.bodyContainer,
+          BackgroundColorClass.LightBlue
+        )}
+      >
+        <LandingBody />
+      </div>
+      <LandingFooter />
+    </div>
+  );
 }

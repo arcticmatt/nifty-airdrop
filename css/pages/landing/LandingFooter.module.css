@@ -1,0 +1,21 @@
+.cloudContainer {
+  width: 100%;
+}
+
+.container {
+  position: relative;
+}
+
+.pigeonLeftContainer {
+  bottom: 100px;
+  left: 0px;
+  position: absolute;
+  width: 354px;
+}
+
+.pigeonRightContainer {
+  bottom: 100px;
+  position: absolute;
+  right: 0px;
+  width: 354px;
+}
