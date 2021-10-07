@@ -29,13 +29,19 @@ function LandingBuyersListInner({ walletAddress }: Props): JSX.Element {
     (data as any).asset_events,
     (item) => item.winner_account.address
   );
-  console.log("dataGrouped", dataGrouped);
 
   return (
     <div className={styles.container}>
-      {Object.keys(dataGrouped).map((address) => (
-        <LandingBuyersListItem key={address} address={address} />
-      ))}
+      {Object.keys(dataGrouped).map(
+        (address) =>
+          address !== walletAddress && (
+            <LandingBuyersListItem
+              key={address}
+              address={address}
+              events={dataGrouped[address]}
+            />
+          )
+      )}
     </div>
   );
 }
