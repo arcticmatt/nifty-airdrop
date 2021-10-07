@@ -11,6 +11,7 @@
     "start": "next start"
   },
   "dependencies": {
+    "amplitude-js": "^8.8.0",
     "axios": "^0.22.0",
     "immer": "^9.0.6",
     "next": "^11.1.2",
@@ -20,6 +21,7 @@
     "use-debounce": "^7.0.0"
   },
   "devDependencies": {
+    "@types/amplitude-js": "^8.0.1",
     "@types/axios": "^0.14.0",
     "@types/react": "^17.0.14",
     "@typescript-eslint/eslint-plugin": "^4.28.3",
