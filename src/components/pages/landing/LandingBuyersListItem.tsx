@@ -1,5 +1,7 @@
 import Body1 from "src/components/text/Body1";
+import Body2 from "src/components/text/Body2";
 import Body2Medium from "src/components/text/Body2Medium";
+import Body2SemiBold from "src/components/text/Body2SemiBold";
 import CheckboxButton from "src/components/buttons/CheckboxButton";
 import ChevronDownIcon from "src/components/icons/ChevronDownIcon";
 import ChevronUpIcon from "src/components/icons/ChevronUpIcon";
@@ -67,34 +69,47 @@ export default function LandingBuyersListItem({
         </PlainButton>
       </div>
       {isExpanded && (
-        <div className={styles.assets}>
-          {Object.keys(eventsGrouped).map((eventId) => {
-            const eventsForId = eventsGrouped[eventId];
-            const numTransferred = eventsForId.reduce(
-              (acc, curr) => acc + Number(curr.quantity),
-              0
-            );
-            const event = eventsForId[0];
+        <div className={styles.expanded}>
+          <a
+            className={styles.openSeaLink}
+            href={`https://opensea.io/${address}`}
+          >
+            <Body2 colorClass={ColorClass.Primary}>
+              OpenSea:{" "}
+              <Body2SemiBold display="inline">
+                {events[0].to_account.user.username}
+              </Body2SemiBold>
+            </Body2>
+          </a>
+          <div className={styles.assets}>
+            {Object.keys(eventsGrouped).map((eventId) => {
+              const eventsForId = eventsGrouped[eventId];
+              const numTransferred = eventsForId.reduce(
+                (acc, curr) => acc + Number(curr.quantity),
+                0
+              );
+              const event = eventsForId[0];
 
-            return (
-              <a
-                className={styles.assetLink}
-                href={event.asset.permalink}
-                key={event.asset.permalink}
-              >
-                <img
-                  className={styles.asset}
-                  src={event.asset.image_url}
-                  alt="Asset"
-                />
-                {numTransferred > 1 && (
-                  <Body2Medium className={styles.numTransferred}>
-                    x{numTransferred}
-                  </Body2Medium>
-                )}
-              </a>
-            );
-          })}
+              return (
+                <a
+                  className={styles.assetLink}
+                  href={event.asset.permalink}
+                  key={event.asset.permalink}
+                >
+                  <img
+                    className={styles.asset}
+                    src={event.asset.image_url}
+                    alt="Asset"
+                  />
+                  {numTransferred > 1 && (
+                    <Body2Medium className={styles.numTransferred}>
+                      x{numTransferred}
+                    </Body2Medium>
+                  )}
+                </a>
+              );
+            })}
+          </div>
         </div>
       )}
     </div>

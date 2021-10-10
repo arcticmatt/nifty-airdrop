@@ -19,7 +19,6 @@
   column-gap: 16px;
   display: flex;
   flex-wrap: wrap;
-  margin-left: 40px;
   margin-top: 20px;
   row-gap: 16px;
 }
@@ -36,12 +35,21 @@
   border-top: none;
 }
 
+.expanded {
+  margin-left: 44px;
+  margin-top: 8px;
+}
+
 .numTransferred {
   bottom: 10%;
   color: white;
   filter: drop-shadow(0 0 5px black);
   left: 10%;
   position: absolute;
+  text-decoration: none;
+}
+
+.openSeaLink {
   text-decoration: none;
 }
 
