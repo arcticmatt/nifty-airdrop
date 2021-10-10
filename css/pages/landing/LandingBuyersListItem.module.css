@@ -11,6 +11,10 @@
   width: 80px;
 }
 
+.assetLink {
+  position: relative;
+}
+
 .assets {
   column-gap: 16px;
   display: flex;
@@ -30,6 +34,15 @@
 
 .container:first-child {
   border-top: none;
+}
+
+.numTransferred {
+  bottom: 10%;
+  color: white;
+  filter: drop-shadow(0 0 5px black);
+  left: 10%;
+  position: absolute;
+  text-decoration: none;
 }
 
 .row {
