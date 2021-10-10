@@ -6,7 +6,7 @@
 .container {
   background-color: var(--color-white);
   flex-shrink: 0;
-  min-height: 140px;
+  min-height: 180px;
   position: relative;
 }
 
@@ -42,7 +42,7 @@
 
 .text {
   left: 50%;
-  min-width: 210px;
+  min-width: 220px;
   position: absolute;
   top: 60%;
   transform: translate(-50%, -50%);
@@ -104,7 +104,7 @@
 @media only screen and (max-width: 740px) {
   .pigeonLeftContainer,
   .pigeonRightContainer {
-    bottom: 100px;
+    bottom: 140px;
     width: 100px;
   }
 }

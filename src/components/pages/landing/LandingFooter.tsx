@@ -49,8 +49,11 @@ export default function LandingFooter(): JSX.Element {
           <br />
           <br />
           <Body2Medium colorClass={ColorClass.Secondary}>
-            suggestions or feedback?{" "}
-            <Link href="https://twitter.com/pencilflip">tweet</Link> us!
+            <Link href="https://twitter.com/pencilflip">tweet us</Link> if you
+            have suggestions or feedback! if you want to support our work, you
+            can also{" "}
+            <Link href="https://ko-fi.com/katherineliu">buy us a coffee</Link>{" "}
+            ☕
           </Body2Medium>
         </Body2Medium>
       </div>
